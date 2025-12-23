@@ -35,7 +35,7 @@
         }
     </style>
     <script>
-        // Shim process for browser environments to prevent ReferenceErrors
+        // Shim process for browser environments
         window.process = window.process || { env: {} };
     </script>
 <script type="importmap">
@@ -51,7 +51,6 @@
 </head>
 <body>
     <div id="root"></div>
-    <!-- Explicitly load the entry point for Vercel/Production environments -->
     <script type="module" src="index.tsx"></script>
 </body>
 </html>
