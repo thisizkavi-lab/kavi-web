@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { getTerminalResponse } from '../services/terminalService';
 import { Message } from '../types';
@@ -27,10 +26,11 @@ export const Terminal: React.FC = () => {
     setIsLoading(true);
 
     try {
+      // Local FAQ service - no external API calls
       const response = await getTerminalResponse(userMsg);
       setMessages(prev => [...prev, { role: 'model', text: response }]);
     } catch (error) {
-      setMessages(prev => [...prev, { role: 'model', text: "system.error: core logic failure." }]);
+      setMessages(prev => [...prev, { role: 'model', text: "system.error: local logic loop interrupted." }]);
     } finally {
       setIsLoading(false);
     }
@@ -56,19 +56,19 @@ export const Terminal: React.FC = () => {
         ))}
         {isLoading && (
           <div className="animate-pulse flex gap-2 items-center text-sm">
-            <span className="font-bold text-gray-400 font-mono">_ processing_thought_loop...</span>
+            <span className="font-bold text-gray-400 font-mono">_ scanning_neural_database...</span>
           </div>
         )}
       </div>
 
-      <form onSubmit={handleSubmit} className="flex gap-2">
+      <form onSubmit={handleSubmit} className="flex gap-2 group">
         <span className="font-bold">{'>'}</span>
         <input 
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="ask something existential..."
-          className="flex-1 bg-transparent outline-none border-b border-black placeholder-gray-300 text-sm font-mono"
+          className="flex-1 bg-transparent outline-none border-b border-black placeholder-gray-300 text-sm font-mono focus:border-gray-400 transition-colors"
           autoFocus
         />
       </form>
