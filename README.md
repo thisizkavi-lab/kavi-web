@@ -1,13 +1,7 @@
-# KAVINDRA / SONY
+# KAVI
 
-> A cyber-minimalist portfolio and digital garden.
-> **Live Demo**: [Comming Soon]
+> A cyber-minimalist portfolio
 
-## 🧠 Philosophy
-This is not just a portfolio; it is a digital extension of the mind.
-- **No Database**: Content works on a "files-as-database" principle using Markdown.
-- **No Backend**: Pure static generation via Vite.
-- **Terminal First**: A functional command-line interface for navigation and secrets.
 
 ## ✨ Features
 
