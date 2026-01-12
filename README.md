@@ -1,76 +1,87 @@
-# KAVI
+# KAVINDRA SONY // PORTFOLIO
 
-> A cyber-minimalist portfolio
+![Portfolio Terminal](assets/demo.png)
 
+> **"A digital extension of the mind."**
+>
+> A zero-dependency, cyber-minimalist portfolio built on React + Vite. Features a custom Markdown CMS, a functional command-line interface, and a focus on high-fidelity typography.
 
-## ✨ Features
+---
 
-### 1. Markdown CMS
-Content is managed via the file system.
-- **Blogs**: `/content/blogs/*.md` (Supports LaTeX $E=mc^2$ & Code Highlighting)
-- **Projects**: `/content/projects/*.md` (Custom metrics & rich links)
+## 🚀 Live Demo
+**[Comming Soon]**
 
-### 2. Interactive Terminal
-The terminal isn't just a gimmick.
-- `ls`, `cd`, `clear`: Standard navigation.
-- `open blogs`, `open projects`: Switch views.
-- `send <msg>`: Anonymous message transmission (simulated/webhook).
-- **Easter Eggs**: Try `sudo`, `hack`, `42`, `joke`, `cat`...
+## 🧠 Engineering Philosophy
 
-### 3. Cyber-Aesthetics
-- Pure CSS styling.
-- Monochrome palette.
-- Responsive design.
+### 1. The "Files-as-Database" Architecture
+This project rejects the complexity of Headless CMSs and databases for a personal site.
+- **Content is Code**: Blogs and Projects are just Markdown files in `content/`.
+- **Zero-Latency**: Content is loaded at build-time using Vite's `import.meta.glob`.
+- **Portable**: The entire site—content and logic—lives in a single git repo.
+
+### 2. High-Performance Terminal
+The terminal isn't a simple overlay; it's deeply integrated into the router.
+- **Navigation**: `cd`, `open`, and `ls` commands control the React Router.
+- **Secrets**: Try typing `hack`, `sudo`, `42`, or `joke`.
+- **Messaging**: A secure webhook integration allows "anonymous" communication.
+
+### 3. Cyber-Minimalism
+- **No Framework Bloat**: Styling is kept raw and functional.
+- **Typography First**: Content readability is prioritized over flashy effects.
+- **Math Ready**: Full LaTeX support ($e^{i\pi} + 1 = 0$) for research papers.
+
+---
 
 ## 🛠️ Tech Stack
-- **Framework**: React + Vite (TypeScript)
+- **Core**: React 18, TypeScript, Vite
 - **Styling**: TailwindCSS
-- **Markdown**: `react-markdown`, `remark-math`, `rehype-katex`
-- **Animations**: CSS Keyframes + Framer Motion concepts
+- **Markdown Engine**: `react-markdown`, `remark-math`, `rehype-katex`, `rehype-highlight`
+- **State**: React Hooks (No Redux/Zustand needed)
 
-## 🚀 Running Locally
+---
+
+## 💻 Running Locally
 
 ```bash
-# 1. Install dependencies
+# 1. Clone the repository
+git clone https://github.com/thisizkavi-lab/kavi-web.git
+
+# 2. Install dependencies
 npm install
 
-# 2. Run dev server
+# 3. Enter the matrix
 npm run dev
 ```
 
-## 📦 Deployment
+## 📝 Managing Content
 
-This project is optimized for **Vercel** or **Netlify**.
-1. Push to GitHub.
-2. Import project in Vercel.
-3. Build command: `npm run build`.
-4. Output directory: `dist`.
-
-## 📝 Adding Content
-
-**To add a blog:**
-Create `content/blogs/my-post.md`:
+### Adding a Blog Post
+Create a file in `content/blogs/my-post.md`:
 ```markdown
 ---
 id: "my-post"
-title: "Title"
-date: "2024-01-01"
-excerpt: "Description..."
+title: "The Future of Interface"
+date: "2024-06-20"
+excerpt: "Why keyboards will outlive touchscreens."
 ---
-# Content
+# Content Here
 ```
 
-**To add a project:**
-Create `content/projects/my-project.md`:
+### Adding a Project
+Create a file in `content/projects/my-project.md`:
 ```markdown
 ---
 id: "my-project"
-title: "Project Name"
-category: "ML / Web"
-description: "Short desc"
-stack: "Python, React"
+title: "Neural Net v1"
+category: "AI / ML"
+stack: "Python, PyTorch"
 metrics:
   - label: "Accuracy"
-    value: 99.9
+    value: 99.2
 ---
 ```
+
+---
+
+## 📜 License
+MIT © [Kavindra Sony](https://github.com/thisizkavi-lab)
