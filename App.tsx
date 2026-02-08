@@ -5,7 +5,7 @@ import { Terminal } from './components/Terminal';
 import { getBlogs, getProjects, MarkdownFile } from './services/markdownService';
 import { MarkdownRenderer } from './components/MarkdownRenderer';
 
-type View = 'home' | 'blogs' | 'projects';
+type View = 'home' | 'blogs' | 'research' | 'prototypes';
 
 // Helper to format dates as relative timestamps
 const formatRelativeDate = (dateString: string): string => {
@@ -39,6 +39,8 @@ interface Project {
   stack: string;
   metrics: { label: string; value: number }[];
   content: string; // Full markdown content
+  type: 'research' | 'prototype';
+  group: string;
 }
 
 const App: React.FC = () => {
@@ -73,7 +75,9 @@ const App: React.FC = () => {
           description: p.frontmatter.description || '',
           stack: p.frontmatter.stack || '',
           metrics: p.frontmatter.metrics || [],
-          content: p.content
+          content: p.content,
+          type: (p.frontmatter.type as 'research' | 'prototype') || 'research',
+          group: p.frontmatter.group || 'implementation'
         })));
       } catch (e) {
         console.error("Failed to load content", e);
@@ -87,42 +91,41 @@ const App: React.FC = () => {
 
   const HomeView = () => (
     <>
-      <header className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-black">
-          Kabindra Sony
+      <header className="mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-black flex items-baseline gap-4">
+          Kavi <span className="text-base font-normal text-gray-400 font-mono tracking-normal">Kabindra Sony</span>
         </h1>
-        <p className="text-lg italic text-gray-600 mb-2">
-          &lt; an existentialist intern of life /&gt;
-        </p>
-        <div className="text-sm tracking-widest uppercase text-gray-500">
-          Biology | ML/AI | Philosophy
+
+        <div className="space-y-2 text-sm md:text-base">
+          <p className="font-mono text-gray-600">
+            &lt; making_biology_programmable /&gt;
+          </p>
+
+          <div className="flex flex-col md:flex-row gap-2 md:gap-6 text-gray-500 font-mono text-xs uppercase tracking-wider">
+            <span>In Silico | In Vitro | In Vivo</span>
+            <span className="hidden md:inline text-gray-300">/</span>
+            <span>based in planet earth</span>
+          </div>
         </div>
       </header>
-
-      <section className="mb-16">
-        <div className="flex items-center gap-3">
-          <span className="text-black">•</span>
-          <span className="text-black">based in planet earth</span>
-        </div>
-      </section>
 
       <hr className="border-gray-100 mb-12" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
         <section>
           <h2 className="text-xl font-bold underline underline-offset-8 mb-8 decoration-2">
-            Writing
+            /reflections
           </h2>
           <div className="space-y-4">
-            <LinkItem label="personal essays" href="https://substack.com/@offtypekavi" />
+            <LinkItem label="substack [offtypekavi]" href="https://substack.com/@offtypekavi" />
             <div className="flex items-center gap-4 mb-2 group">
               <span className="text-gray-400">•</span>
               <button
                 onClick={() => { setView('blogs'); setSelectedPostId(null); }}
                 className="inline-block px-1 transition-all duration-75 glitch-hover text-left"
-                aria-label="View blog posts"
+                aria-label="View logs"
               >
-                Blogs
+                /logs
               </button>
             </div>
           </div>
@@ -130,17 +133,27 @@ const App: React.FC = () => {
 
         <section>
           <h2 className="text-xl font-bold underline underline-offset-8 mb-8 decoration-2">
-            Work
+            /lab
           </h2>
           <div className="space-y-4">
             <div className="flex items-center gap-4 mb-2 group">
               <span className="text-gray-400">•</span>
               <button
-                onClick={() => { setView('projects'); setSelectedProjectId(null); }}
+                onClick={() => { setView('research'); setSelectedProjectId(null); }}
                 className="inline-block px-1 transition-all duration-75 glitch-hover text-left"
-                aria-label="View projects"
+                aria-label="View research"
               >
-                projects
+                research
+              </button>
+            </div>
+            <div className="flex items-center gap-4 mb-2 group">
+              <span className="text-gray-400">•</span>
+              <button
+                onClick={() => { setView('prototypes'); setSelectedProjectId(null); }}
+                className="inline-block px-1 transition-all duration-75 glitch-hover text-left"
+                aria-label="View prototypes"
+              >
+                prototypes
               </button>
             </div>
           </div>
@@ -148,8 +161,9 @@ const App: React.FC = () => {
       </div>
 
       {/* Existential AI dialogue terminal integration */}
-      <Terminal onNavigate={(v) => {
-        setView(v);
+      <Terminal onNavigate={(v: 'home' | 'blogs' | 'research' | 'prototypes') => {
+        // @ts-ignore - Terminal props might be strict on 'projects' which we are replacing
+        setView(v === 'projects' ? 'research' : v);
         setSelectedPostId(null);
         setSelectedProjectId(null);
       }} />
@@ -167,10 +181,10 @@ const App: React.FC = () => {
           [ ← back to home ]
         </button>
         <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-black">
-          Digital Logs
+          /logs
         </h1>
-        <p className="text-sm text-gray-500 uppercase tracking-widest">
-          Observations on biology, silicon, and the void.
+        <p className="text-sm text-gray-500 tracking-widest">
+          a verbose log of my thoughts & consciousness
         </p>
       </header>
 
@@ -242,15 +256,18 @@ const App: React.FC = () => {
     const project = projects.find(p => p.id === id);
     if (!project) return null;
 
+    const backView = project.type === 'prototype' ? 'prototypes' : 'research';
+    const backLabel = project.type === 'prototype' ? 'prototypes' : 'research';
+
     return (
       <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
         <header className="mb-12">
           <button
-            onClick={() => setSelectedProjectId(null)}
+            onClick={() => { setSelectedProjectId(null); setView(backView); }}
             className="text-sm font-bold mb-8 hover:underline decoration-2 underline-offset-4"
-            aria-label="Go back to projects gallery"
+            aria-label={`Go back to ${backLabel}`}
           >
-            [ ← back to gallery ]
+            [ ← back to {backLabel} ]
           </button>
           <div className="text-xs text-gray-400 mb-2 tracking-widest uppercase">{project.category}</div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
@@ -313,67 +330,142 @@ const App: React.FC = () => {
     );
   };
 
-  const ProjectsListView = () => (
-    <div className="animate-in fade-in duration-500">
-      <header className="mb-12">
-        <button
-          onClick={() => setView('home')}
-          className="text-sm font-bold mb-8 hover:underline decoration-2 underline-offset-4"
-          aria-label="Go back to home"
-        >
-          [ ← back to home ]
-        </button>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-black">
-          Neural Forge
-        </h1>
-        <p className="text-sm text-gray-500 uppercase tracking-widest">
-          Machine learning experiments in biology and industry.
-        </p>
-      </header>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {isLoading ? (
-          <div className="text-sm font-mono text-gray-400 animate-pulse">loading_projects...</div>
-        ) : projects.length === 0 ? (
-          <div className="text-sm font-mono text-gray-400">no projects found_</div>
-        ) : (
-          projects.map((project) => (
-            <article
-              key={project.id}
-              onClick={() => setSelectedProjectId(project.id)}
-              className="border border-gray-100 p-6 hover:border-black transition-colors group cursor-pointer"
-              role="button"
-              aria-label={`View details for ${project.title}`}
-              tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && setSelectedProjectId(project.id)}
-            >
-              <div className="text-[10px] text-gray-400 uppercase tracking-widest mb-2">
-                {project.category}
-              </div>
-              <h2 className="text-xl font-bold mb-4 group-hover:bg-black group-hover:text-white inline-block px-1">
-                {project.title}
-              </h2>
-              <p className="text-gray-600 text-sm mb-6 leading-relaxed line-clamp-3">
-                {project.description}
-              </p>
-              <div className="flex justify-between items-center">
-                <div className="text-[10px] font-mono text-gray-400">
-                  STACK: {project.stack}
-                </div>
-                <div className="text-[10px] font-bold uppercase tracking-tighter">
-                  view_details →
-                </div>
-              </div>
-            </article>
-          ))
-        )}
+  const ProjectCard = ({ project }: { project: Project }) => (
+    <article
+      onClick={() => setSelectedProjectId(project.id)}
+      className="border border-gray-100 p-6 hover:border-black transition-colors group cursor-pointer h-full flex flex-col"
+      role="button"
+      aria-label={`View details for ${project.title}`}
+    >
+      <div className="text-[10px] text-gray-400 uppercase tracking-widest mb-2">
+        {project.category}
       </div>
-
-      <div className="mt-24 pt-8 border-t border-gray-100 italic text-gray-400 text-sm">
-        End of gallery.
+      <h3 className="text-lg font-bold mb-3 group-hover:bg-black group-hover:text-white inline-block px-1">
+        {project.title}
+      </h3>
+      <p className="text-gray-600 text-sm mb-6 leading-relaxed line-clamp-3 flex-grow">
+        {project.description}
+      </p>
+      <div className="flex justify-between items-center mt-auto">
+        <div className="text-[10px] font-mono text-gray-400 truncate max-w-[70%]">
+          {project.stack}
+        </div>
+        <div className="text-[10px] font-bold uppercase tracking-tighter">
+          view →
+        </div>
       </div>
-    </div>
+    </article>
   );
+
+  const ResearchView = () => {
+    const researchProjects = projects.filter(p => p.type === 'research');
+    const implementations = researchProjects.filter(p => p.group === 'implementation');
+    const literature = researchProjects.filter(p => p.group === 'literature');
+
+    return (
+      <div className="animate-in fade-in duration-500">
+        <header className="mb-12">
+          <button
+            onClick={() => setView('home')}
+            className="text-sm font-bold mb-8 hover:underline decoration-2 underline-offset-4"
+          >
+            [ ← back to home ]
+          </button>
+          <div className="mb-2 text-xs font-mono text-gray-500 uppercase tracking-widest">/lab/research</div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-black">
+            The Input
+          </h1>
+          <p className="text-sm text-gray-500 tracking-widest">
+            Learning, implementing, and understanding the world.
+          </p>
+        </header>
+
+        <section className="mb-16">
+          <h2 className="text-xl font-bold border-b border-black pb-4 mb-8">Paper Implementations</h2>
+          {implementations.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {implementations.map(p => <ProjectCard key={p.id} project={p} />)}
+            </div>
+          ) : (
+            <div className="text-sm font-mono text-gray-400 italic">No implementations yet.</div>
+          )}
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-xl font-bold border-b border-gray-200 pb-4 mb-8 text-gray-600">Literature & Studies</h2>
+          {literature.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {literature.map(p => <ProjectCard key={p.id} project={p} />)}
+            </div>
+          ) : (
+            <div className="text-sm font-mono text-gray-400 italic">Reading list empty.</div>
+          )}
+        </section>
+      </div>
+    );
+  };
+
+  const PrototypesView = () => {
+    const prototypeProjects = projects.filter(p => p.type === 'prototype');
+    const sandbox = prototypeProjects.filter(p => p.group === 'sandbox');
+    const functional = prototypeProjects.filter(p => p.group === 'functional');
+    const ventures = prototypeProjects.filter(p => p.group === 'ventures');
+
+    return (
+      <div className="animate-in fade-in duration-500">
+        <header className="mb-12">
+          <button
+            onClick={() => setView('home')}
+            className="text-sm font-bold mb-8 hover:underline decoration-2 underline-offset-4"
+          >
+            [ ← back to home ]
+          </button>
+          <div className="mb-2 text-xs font-mono text-gray-500 uppercase tracking-widest">/lab/prototypes</div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-black">
+            The Output
+          </h1>
+          <p className="text-sm text-gray-500 tracking-widest">
+            Building, creating, and shipping.
+          </p>
+        </header>
+
+        <section className="mb-16">
+          <h2 className="text-xl font-bold border-b border-black pb-4 mb-8">Functional Builds</h2>
+          {functional.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {functional.map(p => <ProjectCard key={p.id} project={p} />)}
+            </div>
+          ) : (
+            <div className="text-sm font-mono text-gray-400 italic">No builds deployed.</div>
+          )}
+        </section>
+
+        <section className="mb-16">
+          <h2 className="text-xl font-bold border-b border-gray-200 pb-4 mb-8 text-gray-600">The Sandbox</h2>
+          {sandbox.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {sandbox.map(p => <ProjectCard key={p.id} project={p} />)}
+            </div>
+          ) : (
+            <div className="text-sm font-mono text-gray-400 italic">Sandbox empty.</div>
+          )}
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-xl font-bold border-b border-gray-200 pb-4 mb-8 text-gray-400">Ventures</h2>
+          {ventures.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {ventures.map(p => <ProjectCard key={p.id} project={p} />)}
+            </div>
+          ) : (
+            <div className="text-sm font-mono text-gray-400 italic border border-dashed border-gray-200 p-8 text-center">
+              Coming Soon.
+            </div>
+          )}
+        </section>
+      </div>
+    );
+  };
 
   return (
     <main className="min-h-screen p-8 md:p-16 lg:p-24 max-w-6xl mx-auto selection:bg-black selection:text-white flex flex-col">
@@ -383,8 +475,11 @@ const App: React.FC = () => {
         {view === 'blogs' && !selectedPostId && <BlogListView />}
         {view === 'blogs' && selectedPostId && BlogPostDetailView(selectedPostId)}
 
-        {view === 'projects' && !selectedProjectId && <ProjectsListView />}
-        {view === 'projects' && selectedProjectId && ProjectDetailView(selectedProjectId)}
+        {view === 'research' && !selectedProjectId && <ResearchView />}
+        {view === 'research' && selectedProjectId && ProjectDetailView(selectedProjectId)}
+
+        {view === 'prototypes' && !selectedProjectId && <PrototypesView />}
+        {view === 'prototypes' && selectedProjectId && ProjectDetailView(selectedProjectId)}
       </div>
 
       {/* Global Footer with Social Links */}
@@ -398,7 +493,7 @@ const App: React.FC = () => {
         </div>
 
         <div className="text-[10px] text-gray-300 uppercase tracking-[0.3em] font-mono">
-          WETWARE ARCHIVED. ENTROPY IS INEVITABLE. V1.1.0-STABLE
+          GAINING_ROOT_ACCESS_TO_BIOLOGY.
         </div>
       </footer>
     </main>

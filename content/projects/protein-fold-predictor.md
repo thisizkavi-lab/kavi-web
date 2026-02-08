@@ -1,5 +1,7 @@
 ---
 id: "protein-fold-predictor"
+type: "prototype"
+group: "functional"
 title: "protein-fold-predictor"
 category: "Biology / ML"
 description: "A deep learning model utilizing graph neural networks to predict tertiary protein structures."

@@ -1,5 +1,7 @@
 ---
 id: "quantum-noise-filter"
+type: "prototype"
+group: "sandbox"
 title: "Quantum Noise Filter"
 category: "Physics / ML"
 description: "Denoising superconducting qubit readouts using Recurrent Neural Networks."

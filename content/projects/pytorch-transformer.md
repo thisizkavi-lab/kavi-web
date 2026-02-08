@@ -1,5 +1,7 @@
 ---
 id: "pytorch-transformer"
+type: "research"
+group: "implementation"
 title: "PyTorch Transformer Implementation"
 category: "Deep Learning / NLP"
 description: "A clean, annotated implementation of the Transformer model from 'Attention Is All You Need' using PyTorch."

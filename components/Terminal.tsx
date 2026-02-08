@@ -128,7 +128,7 @@ export const Terminal: React.FC<TerminalProps> = ({ onNavigate }) => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="ask something or type 'send <msg>'"
+          placeholder="awaiting_query... >"
           className="flex-1 bg-transparent outline-none border-b border-black placeholder-gray-300 text-sm font-mono focus:border-gray-400 transition-colors"
           autoFocus
         />
