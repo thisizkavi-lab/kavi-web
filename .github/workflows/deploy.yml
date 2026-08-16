@@ -25,15 +25,6 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
-      - name: Set up Python for notebook support
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
-          cache: pip
-
-      - name: Install optional notebook tooling
-        run: pip install --upgrade nbconvert
-
       - name: Build site
         env:
           JEKYLL_ENV: production
