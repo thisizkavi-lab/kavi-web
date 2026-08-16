@@ -6,7 +6,7 @@ subtitle: Computational biophysics · protein dynamics · reproducible research
 
 profile:
   align: right
-  image: profile.svg
+  image: profile.jpg
   image_circular: false
   more_info: >
     <p>Independent researcher</p>
