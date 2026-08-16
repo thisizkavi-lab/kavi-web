@@ -19,7 +19,7 @@ Then open http://localhost:4000/kavi-web/.
 - `_projects/` — project pages shown in the portfolio
 - `_posts/` — dated research notes
 - `_data/socials.yml` — public contact links
-- `assets/img/profile.svg` — profile illustration
+- `assets/img/profile.jpg` — profile photograph
 
 ## Deployment
 
