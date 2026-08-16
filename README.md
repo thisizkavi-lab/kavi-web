@@ -23,9 +23,12 @@ Then open http://localhost:4000/kavi-web/.
 
 ## Deployment
 
-The workflow in `.github/workflows/deploy.yml` builds the site once. On `main`, it publishes the same `_site` directory to GitHub Pages and (when configured) Vercel.
+The workflow in `.github/workflows/deploy.yml` builds equivalent outputs from the same source:
 
-For the Vercel step, add these repository Actions secrets:
+- GitHub Pages uses the `/kavi-web/` base path.
+- Vercel uses root-relative links for its `/` domain.
+
+On `main`, GitHub Pages is published automatically. The Vercel output is published when the repository has these Actions secrets:
 
 - `VERCEL_TOKEN`
 - `VERCEL_ORG_ID`
