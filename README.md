@@ -34,6 +34,6 @@ On `main`, GitHub Pages is published automatically. The Vercel output is publish
 - `VERCEL_ORG_ID`
 - `VERCEL_PROJECT_ID`
 
-The existing Vercel project and team must be accessible to the account that creates those values. No secret belongs in the repository.
+The repository's `vercel.json` intentionally disables Vercel's duplicate Git-triggered build; GitHub Actions owns the build and deploys the finished static output. The existing Vercel project and team must be accessible to the account that creates those values. No secret belongs in the repository.
 
 The original Vite site remains available on the `main` branch while this migration is reviewed.
