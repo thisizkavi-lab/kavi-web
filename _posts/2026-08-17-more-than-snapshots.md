@@ -2,6 +2,7 @@
 layout: post
 title: "Why protein dynamics needs more than snapshots"
 date: 2026-08-17 00:00:00 +0900
+published: false
 description: "A short note on the gap between static structures, simulation trajectories, and testable generative models."
 tags: [biophysics, protein-dynamics, molecular-simulation]
 categories: [research-notes]

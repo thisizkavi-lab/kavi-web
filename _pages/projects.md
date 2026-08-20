@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Small, testable projects at the boundary of protein physics and machine learning.
+description: Small, testable projects in biophysics, protein dynamics, and deep learning.
 nav: true
 nav_order: 2
 display_categories: [research, software]

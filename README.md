@@ -16,6 +16,8 @@ Then open http://localhost:4000/kavi-web/.
 ## Content map
 
 - `_pages/about.md` — homepage biography and research focus
+- `_pages/publications.md` — publication list (currently empty)
+- `_pages/teaching.md` — teaching materials (currently empty)
 - `_projects/` — project pages shown in the portfolio
 - `_posts/` — dated research notes
 - `_data/socials.yml` — public contact links
