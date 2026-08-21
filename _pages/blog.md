@@ -2,9 +2,9 @@
 layout: page
 title: notes
 permalink: /blog/
-description: Short technical notes, reading memos, and build logs.
+description: Short notes and reflections on biophysics, protein dynamics, and deep learning.
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 <div class="posts">

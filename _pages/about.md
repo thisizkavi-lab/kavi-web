@@ -2,15 +2,15 @@
 layout: about
 title: about
 permalink: /
-subtitle: Computational biophysics · protein dynamics · reproducible research
+subtitle: Biophysics · protein dynamics · deep learning
 
 profile:
   align: right
   image: profile.jpg
   image_circular: false
   more_info: >
-    <p>Independent researcher</p>
-    <p>Protein dynamics & molecular simulation</p>
+    <p>Graduate student, Kyoto University</p>
+    <p>Shoji Takada Lab</p>
 
 selected_papers: false
 social: true
@@ -24,15 +24,6 @@ latest_posts:
   limit: 3
 ---
 
-I am **Kabindra Sony**, an independent researcher building a practical foundation in computational biophysics. My focus is how proteins move between structural states—and how simulations, structural data, and machine learning can help us reason about the transitions between them.
+I am **Kabindra Sony**, a graduate student at Kyoto University studying biophysics and researching protein dynamics with deep learning in the Shoji Takada Lab.
 
-My current work is exploratory and reproducibility-first: start with a well-studied benchmark system, make the data and evaluation explicit, and test whether a method adds information beyond interpolation or conventional simulation.
-
-I am especially interested in:
-
-- conformational ensembles and transient intermediate states
-- coarse-grained molecular dynamics and structural analysis
-- physics-aware generative models
-- open, small-scale computational experiments that others can rerun
-
-This site is a living research notebook: projects, notes, code, and evidence as they become real.
+I am interested in how proteins move between functional states and how data-driven models can help us understand those dynamics. This site is a place for my research notes, open projects, and publications as they become ready to share.

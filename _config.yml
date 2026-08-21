@@ -9,10 +9,10 @@ last_name: Sony
 contact_note: >
   For research collaboration, reproducible computational-biology work, or thoughtful feedback, please get in touch.
 description: >
-  Research notes and open projects by Kabindra Sony, focused on protein conformational dynamics, molecular simulation, and machine learning.
+  Research notes and open projects by Kabindra Sony, focused on biophysics, protein dynamics, and deep learning.
 footer_text: >
   Built with <a href="https://github.com/alshedivat/al-folio">al-folio</a> and published as an open research notebook.
-keywords: computational biophysics, protein dynamics, molecular simulation, machine learning
+keywords: biophysics, protein dynamics, deep learning, computational biology
 lang: en
 icon: 🧬
 apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
@@ -134,8 +134,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: research notes
-blog_description: Short, reproducible notes on computational biophysics.
+blog_name: notes
+blog_description: Short notes and reflections on biophysics, protein dynamics, and deep learning.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
