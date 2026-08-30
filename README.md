@@ -16,10 +16,11 @@ Then open http://localhost:4000/kavi-web/.
 ## Content map
 
 - `_pages/about.md` — homepage biography and research focus
-- `_pages/research.md` — current scientific direction
+- `_pages/research.md` — current scientific direction (kept available, not in the main navigation)
 - `_pages/learning.md` — learning notes, explainers, and tutorials
 - `_pages/reflections.md` — personal reflections
 - `_pages/cv.md` — concise academic snapshot
+- Publications and preprints will be added directly to `_pages/about.md`.
 - `_projects/` — project pages shown in the portfolio
 - `_posts/` — dated research notes
 - `_data/socials.yml` — public contact links
