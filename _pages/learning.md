@@ -4,7 +4,7 @@ title: learning
 permalink: /learning/
 description: Things I learn, work through, and explain.
 nav: true
-nav_order: 3
+nav_order: 2
 ---
 
 This is my intellectual workshop: notes, tutorials, code walkthroughs, and explanations of ideas I am working to understand.
