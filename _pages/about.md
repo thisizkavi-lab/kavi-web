@@ -19,9 +19,7 @@ announcements:
   enabled: false
 
 latest_posts:
-  enabled: true
-  scrollable: true
-  limit: 3
+  enabled: false
 ---
 
 I am **Kabindra Sony**, a graduate student at Kyoto University studying biophysics and researching protein dynamics with deep learning in the Shoji Takada Lab.
