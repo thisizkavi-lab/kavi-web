@@ -26,4 +26,4 @@ latest_posts:
 
 I am **Kabindra Sony**, a graduate student at Kyoto University studying biophysics and researching protein dynamics with deep learning in the Shoji Takada Lab.
 
-I am interested in how proteins move between functional states and how data-driven models can help us understand those dynamics. This site is a place for my research notes, open projects, and publications as they become ready to share.
+I am interested in how proteins move between functional states and how data-driven models can help us understand those dynamics. This site is a place for my research, learning notes, reflections, and work as it becomes ready to share.

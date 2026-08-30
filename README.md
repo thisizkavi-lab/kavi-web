@@ -1,6 +1,6 @@
 # Kabindra Sony — research portfolio
 
-This site is a personal research portfolio and notebook for computational biophysics, protein conformational dynamics, molecular simulation, and machine learning.
+This site is a personal research portfolio and notebook for biophysics, protein dynamics, deep learning, and the process of becoming a scientist.
 
 It is built with [al-folio](https://github.com/alshedivat/al-folio), a Jekyll-based academic website theme.
 
@@ -16,12 +16,16 @@ Then open http://localhost:4000/kavi-web/.
 ## Content map
 
 - `_pages/about.md` — homepage biography and research focus
-- `_pages/publications.md` — publication list (currently empty)
-- `_pages/teaching.md` — teaching materials (currently empty)
+- `_pages/research.md` — current scientific direction
+- `_pages/learning.md` — learning notes, explainers, and tutorials
+- `_pages/reflections.md` — personal reflections
+- `_pages/cv.md` — concise academic snapshot
 - `_projects/` — project pages shown in the portfolio
 - `_posts/` — dated research notes
 - `_data/socials.yml` — public contact links
 - `assets/img/profile.jpg` — profile photograph
+
+Older Projects, Publications, Teaching, and Notes pages remain in the source as quiet placeholders while there is no finished material to show in the main navigation.
 
 ## Deployment
 
