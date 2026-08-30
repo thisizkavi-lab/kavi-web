@@ -3,7 +3,7 @@ layout: page
 title: research
 permalink: /research/
 description: Protein dynamics and deep learning in the Shoji Takada Lab.
-nav: true
+nav: false
 nav_order: 2
 ---
 
