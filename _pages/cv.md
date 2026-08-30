@@ -4,7 +4,7 @@ title: CV
 permalink: /cv/
 description: A concise, evolving snapshot of my research direction and technical practice.
 nav: true
-nav_order: 6
+nav_order: 5
 ---
 
 ## Research focus

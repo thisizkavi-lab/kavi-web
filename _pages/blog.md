@@ -3,8 +3,7 @@ layout: page
 title: notes
 permalink: /blog/
 description: Short notes and reflections on biophysics, protein dynamics, and deep learning.
-nav: true
-nav_order: 4
+nav: false
 ---
 
 <div class="posts">

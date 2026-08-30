@@ -3,7 +3,7 @@ layout: page
 title: projects
 permalink: /projects/
 description: Small, testable projects in biophysics, protein dynamics, and deep learning.
-nav: true
+nav: false
 nav_order: 2
 display_categories: [research, software]
 horizontal: false

@@ -134,8 +134,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: notes
-blog_description: Short notes and reflections on biophysics, protein dynamics, and deep learning.
+blog_name: learning
+blog_description: Things I learn, work through, and explain.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
