@@ -7,7 +7,11 @@ nav_order: 4
 ---
 
 <style>
-  .page__title { display: none; }
+  .page__title,
+  .post-title,
+  .post-header {
+    display: none !important;
+  }
 
   .cv-page {
     max-width: 720px;
@@ -43,6 +47,18 @@ nav_order: 4
     font-size: 1.06rem;
     font-weight: 600;
     line-height: 1.45;
+  }
+
+  .cv-place a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.32);
+    transition: border-color 160ms ease, opacity 160ms ease;
+  }
+
+  .cv-place a:hover {
+    border-bottom-color: currentColor;
+    opacity: 0.78;
   }
 
   .cv-role {
@@ -87,7 +103,7 @@ nav_order: 4
     <h2>Research</h2>
 
     <article class="cv-entry">
-      <p class="cv-place">Theoretical Biophysics Laboratory · Kyoto University</p>
+      <p class="cv-place"><a href="https://theory.biophys.kyoto-u.ac.jp/" target="_blank" rel="noopener">Theoretical Biophysics Laboratory</a> · <a href="https://www.kyoto-u.ac.jp/en" target="_blank" rel="noopener">Kyoto University</a></p>
       <p class="cv-role">Graduate Student</p>
       <p class="cv-description">Studying protein conformational dynamics—how proteins move between functional states—using molecular simulation and deep learning.</p>
     </article>
@@ -97,13 +113,13 @@ nav_order: 4
     <h2>Education</h2>
 
     <article class="cv-entry">
-      <p class="cv-place">Kyoto University</p>
-      <p class="cv-role">Graduate School of Science · Biophysics</p>
+      <p class="cv-place"><a href="https://www.kyoto-u.ac.jp/en" target="_blank" rel="noopener">Kyoto University</a></p>
+      <p class="cv-role">Graduate · Biophysics</p>
     </article>
 
     <article class="cv-entry">
-      <p class="cv-place">Tribhuvan University</p>
-      <p class="cv-role">B.Sc. Biology</p>
+      <p class="cv-place"><a href="https://tu.edu.np/" target="_blank" rel="noopener">Tribhuvan University</a></p>
+      <p class="cv-role">Undergraduate · Biology</p>
       <p class="cv-date">2018–2022</p>
     </article>
   </section>
