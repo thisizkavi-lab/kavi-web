@@ -26,6 +26,19 @@ I am **Kabindra Sony**, a graduate student at Kyoto University studying biophysi
 
 I am interested in how proteins move between functional states and how data-driven models can help us understand those dynamics. This site is a place for my research, learning notes, reflections, and work as it becomes ready to share.
 
-## Publications
+---
 
-No publications yet. Finished publications and preprints will appear here as the work becomes ready to share.
+### Research
+
+[**Theoretical Biophysics Laboratory**](https://theory.biophys.kyoto-u.ac.jp/) · [Kyoto University](https://www.kyoto-u.ac.jp/en)  
+Graduate Student
+
+Studying protein conformational dynamics—how proteins move between functional states—using molecular simulation and deep learning.
+
+### Education
+
+[**Kyoto University**](https://www.kyoto-u.ac.jp/en)  
+Graduate · Biophysics
+
+[**Tribhuvan University**](https://tu.edu.np/)  
+Undergraduate · Biology · 2018–2022
