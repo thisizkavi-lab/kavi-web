@@ -2,25 +2,35 @@
 layout: page
 title: CV
 permalink: /cv/
-description: A concise, evolving snapshot of my research direction and technical practice.
+description: Research, education, and scientific activities.
 nav: true
 nav_order: 4
 ---
 
-## Research focus
+## Research
 
-Biophysics, protein dynamics, and deep learning.
+**Theoretical Biophysics Laboratory, Kyoto University**  
+Graduate Student · ongoing
 
-## Current projects
+Studying protein conformational dynamics—how proteins move between functional states—using molecular simulation and deep learning.
 
-- **Protein dynamics with deep learning** — studying how data-driven models can help describe molecular motion.
-- **AlphaFold from first principles (toy)** — learning the mechanics of structure prediction through a small, reproducible implementation.
-- **Open research tooling** — documenting experiments so that the assumptions, data splits, and limitations remain visible.
+**Central Department of Biotechnology, Tribhuvan University**  
+Research Intern · 2023–2024
 
-## Technical practice
+Worked on CRISPR/Cas9 gene editing in diverse Nepali rice varieties, with a focus on disease resistance, stress tolerance, and productivity.
 
-Python · scientific computing · data analysis · deep-learning experiments · technical writing
+## Education
 
-## Contact
+**Kyoto University**  
+Graduate School of Science · Biophysics  
+2026–
 
-The public contact route for this site is [GitHub](https://github.com/thisizkavi-lab).
+**Tribhuvan University**  
+B.Sc. Biology  
+2018–2022
+
+## Activities
+
+**iGEM · SynBio 101**  
+Regional Head, Nepal · Project Member  
+2022–2023
