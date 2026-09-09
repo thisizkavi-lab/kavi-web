@@ -1,12 +1,12 @@
 ---
 layout: page
-title: reflections
+title: thoughts
 permalink: /reflections/
-description: Personal reflections on science, ambition, and becoming a scientist.
+description: Personal thoughts on science, ambition, and becoming a scientist.
 nav: true
 nav_order: 3
 ---
 
 This is where I will write about the questions, choices, and experiences around becoming a scientist.
 
-<p>No reflections yet.</p>
+<p>No thoughts yet.</p>
