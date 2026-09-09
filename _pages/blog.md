@@ -1,14 +1,15 @@
 ---
 layout: page
-title: notes
+title: blog
 permalink: /blog/
-description: Short notes and reflections on biophysics, protein dynamics, and deep learning.
-nav: false
+description: Things I learn, work through, and explain.
+nav: true
+nav_order: 2
 ---
 
 <div class="posts">
   {% if site.posts.size == 0 %}
-    <p>No notes published yet.</p>
+    <p>No posts yet.</p>
   {% else %}
     {% for post in site.posts reversed %}
       <article class="post">
