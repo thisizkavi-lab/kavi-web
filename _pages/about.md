@@ -11,7 +11,7 @@ profile:
     <p>Graduate student · <a href="https://theory.biophys.kyoto-u.ac.jp/">Shoji Takada Lab</a></p>
 
 selected_papers: false
-social: true
+social: false
 
 announcements:
   enabled: false
@@ -22,7 +22,6 @@ latest_posts:
 
 <style>
 .post-title { font-weight: 700; }
-.contact-note { display: none !important; }
 </style>
 
 <small>Kabindra Sony</small>
