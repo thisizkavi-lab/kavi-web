@@ -20,6 +20,10 @@ latest_posts:
   enabled: false
 ---
 
+<style>
+.post-title { font-weight: 700; }
+</style>
+
 <small>Kabindra Sony</small>
 
 I’m a graduate student at [Kyoto University](https://www.kyoto-u.ac.jp/en). I work on understanding how proteins move and change shape over time.
