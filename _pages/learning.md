@@ -3,7 +3,7 @@ layout: page
 title: learning
 permalink: /learning/
 description: Things I learn, work through, and explain.
-nav: true
+nav: false
 nav_order: 2
 ---
 
