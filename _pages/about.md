@@ -8,8 +8,7 @@ profile:
   image: profile.jpg
   image_circular: false
   more_info: >
-    <p>Graduate student, <a href="https://www.kyoto-u.ac.jp/en">Kyoto University</a></p>
-    <p><a href="https://theory.biophys.kyoto-u.ac.jp/">Shoji Takada Lab</a></p>
+    <p>Graduate student · <a href="https://theory.biophys.kyoto-u.ac.jp/">Shoji Takada Lab</a></p>
 
 selected_papers: false
 social: true
