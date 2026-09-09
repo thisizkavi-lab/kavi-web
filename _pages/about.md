@@ -2,7 +2,6 @@
 layout: about
 title: about
 permalink: /
-subtitle: Biophysics · protein dynamics · deep learning
 
 profile:
   align: right
