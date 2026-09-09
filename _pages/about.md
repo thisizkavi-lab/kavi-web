@@ -22,6 +22,7 @@ latest_posts:
 
 <style>
 .post-title { font-weight: 700; }
+.contact-note { display: none !important; }
 </style>
 
 <small>Kabindra Sony</small>
