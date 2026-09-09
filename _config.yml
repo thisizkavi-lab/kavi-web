@@ -117,12 +117,12 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # -----------------------------------------------------------------------------
 
 analytics:
-  # For Google Analytics, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
+  # For Google Analytics, see https://support.google.com/analytics/answer/10447272?hl=en&ref_topic=14088998&sjid=5129943941510317771-SA#zippy=%2Cgoogle-sites
   # and follow the instructions for Google Sites. You will need to create a Google Analytics property and copy the Google tag ID.
   google: # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
   cronitor: # cronitor RUM analytics site ID (format: XXXXXXXXX)
   pirsch: # your Pirsch analytics site ID (length 32 characters)
-  openpanel: # your Openpanel client ID (format: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+  openpanel: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
   cloudflare: # your Cloudflare Web Analytics beacon token (32 hex characters)
 enable_simple_analytics: false # Simple Analytics identifies a site by its domain, so it has no ID to set above
 
@@ -170,12 +170,12 @@ disqus_shortname: al-folio # put your disqus shortname
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
-# Optional: Set default categories and tags for posts from your source.
+# Optional: Set default categories and tags for posts from each source.
 external_sources: []
 
 newsletter:
   enabled: false
-  endpoint: # your loops endpoint (e.g. https://app.loops.so/api/newsletter-form/YOUR-ENDPOINT)
+  endpoint: # your loops endpoint (e.g., https://app.loops.so/api/newsletter-form/YOUR-ENDPOINT)
   # https://loops.so/docs/forms/custom-form
 
 # -----------------------------------------------------------------------------
@@ -353,7 +353,7 @@ scholar:
   bibliography: papers.bib
   bibliography_template: bib
   # Note: if you have latex math in your bibtex, the latex filter
-  # preprocessing may conflict with MathJax if the latter is enabled.
+  # preprocessing may conflict with MathJAX if the latter is enabled.
   # See https://github.com/alshedivat/al-folio/issues/357.
   bibtex_filters: [latex, smallcaps, superscript]
 
@@ -408,7 +408,7 @@ filtered_bibtex_keywords:
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
 max_author_limit: 3 # leave blank to always show all authors
-more_authors_animation_delay: 10 # more authors are revealed after click; smaller delay means faster animation
+more_authors_animation_delay: 10 # more authors are revealed on click using animation; smaller delay means faster animation
 
 # Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.
 enable_publication_thumbnails: true
@@ -478,6 +478,7 @@ enable_video_embedding: false # enables video embedding for bibtex entries. If f
 
 # Add the url, version and integrity hash of the libraries you use in your site.
 # The integrity hash is used to ensure that the library is not tampered with.
+# Integrity hashes not provided by the libraries were generated using https://www.srihash.org/
 third_party_libraries:
   download: false # if true, download the versions of the libraries specified below and use the downloaded files
   bootstrap-table:
