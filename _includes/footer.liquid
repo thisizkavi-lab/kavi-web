@@ -14,3 +14,14 @@
     </a>
   </div>
 </footer>
+
+<script>
+  (() => {
+    document.querySelectorAll('link[rel="shortcut icon"], link[rel="icon"]').forEach((link) => link.remove());
+    const favicon = document.createElement('link');
+    favicon.rel = 'icon';
+    favicon.type = 'image/png';
+    favicon.href = '{{ "/assets/img/kavi-favicon.png" | relative_url }}';
+    document.head.appendChild(favicon);
+  })();
+</script>
