@@ -15,6 +15,12 @@
   </div>
 </footer>
 
+<style>
+  /* Light and dark only — hide the system/auto theme icon */
+  #light-toggle-system {
+    display: none !important;
+  }
+</style>
 <script>
   (() => {
     document.querySelectorAll('link[rel="shortcut icon"], link[rel="icon"]').forEach((link) => link.remove());
@@ -23,5 +29,27 @@
     favicon.type = 'image/png';
     favicon.href = '{{ "/assets/img/kavi-favicon.png" | relative_url }}';
     document.head.appendChild(favicon);
+  })();
+
+  (() => {
+    const sys = document.getElementById('light-toggle-system');
+    if (sys) sys.remove();
+
+    if (typeof toggleThemeSetting === 'function' && typeof setThemeSetting === 'function') {
+      toggleThemeSetting = () => {
+        const current =
+          typeof determineThemeSetting === 'function' ? determineThemeSetting() : localStorage.getItem('theme');
+        setThemeSetting(current === 'light' ? 'dark' : 'light');
+      };
+    }
+
+    const setting = localStorage.getItem('theme');
+    if (setting !== 'light' && setting !== 'dark' && typeof setThemeSetting === 'function') {
+      const computed =
+        typeof determineComputedTheme === 'function'
+          ? determineComputedTheme()
+          : document.documentElement.getAttribute('data-theme') || 'dark';
+      setThemeSetting(computed === 'light' ? 'light' : 'dark');
+    }
   })();
 </script>
