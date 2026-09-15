@@ -14,8 +14,8 @@ footer_text: >
   Built with <a href="https://github.com/alshedivat/al-folio">al-folio</a> and published as an open research notebook.
 keywords: biophysics, protein dynamics, deep learning, computational biology
 lang: en
-icon: 🧬
-apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
+icon: favicon.svg
+apple_touch_icon: kavi-apple-touch.png
 
 url: https://thisizkavi-lab.github.io
 baseurl: /kavi-web
