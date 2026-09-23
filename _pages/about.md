@@ -54,8 +54,6 @@ Undergraduate · Biology · 2018–2022
 
 <hr class="protein-divider" />
 
-<p class="protein-lead">A protein changing shape. This is the sort of thing I think about.</p>
-
 <div id="protein-viewer"></div>
 <link rel="stylesheet" href="{{ '/assets/js/protein-viewer.css' | relative_url }}">
 <script src="{{ '/assets/js/protein-viewer.js' | relative_url }}" defer></script>
