@@ -50,7 +50,7 @@ Understanding these motions can also help us understand how proteins interact wi
 Graduate · Biophysics
 
 [**Tribhuvan University**](https://tu.edu.np/)  
-Undergraduate · Biology · 2018–2022
+Undergraduate · Biology
 
 <hr class="protein-divider" />
 
