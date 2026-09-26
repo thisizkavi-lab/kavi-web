@@ -9,6 +9,34 @@
   #light-toggle-system {
     display: none !important;
   }
+
+  footer.fixed-bottom a {
+    transition: color 160ms ease;
+  }
+
+  /* Brand marks. X and GitHub are black on light, white on dark — black would vanish on a dark footer. */
+  html[data-theme="light"] footer.fixed-bottom a[aria-label="GitHub"]:hover,
+  html[data-theme="light"] footer.fixed-bottom a[aria-label="GitHub"]:focus-visible,
+  html[data-theme="light"] footer.fixed-bottom a[aria-label="X"]:hover,
+  html[data-theme="light"] footer.fixed-bottom a[aria-label="X"]:focus-visible,
+  html[data-theme="light"] footer.fixed-bottom a[aria-label="Email"]:hover,
+  html[data-theme="light"] footer.fixed-bottom a[aria-label="Email"]:focus-visible {
+    color: #000 !important;
+  }
+
+  html[data-theme="dark"] footer.fixed-bottom a[aria-label="GitHub"]:hover,
+  html[data-theme="dark"] footer.fixed-bottom a[aria-label="GitHub"]:focus-visible,
+  html[data-theme="dark"] footer.fixed-bottom a[aria-label="X"]:hover,
+  html[data-theme="dark"] footer.fixed-bottom a[aria-label="X"]:focus-visible,
+  html[data-theme="dark"] footer.fixed-bottom a[aria-label="Email"]:hover,
+  html[data-theme="dark"] footer.fixed-bottom a[aria-label="Email"]:focus-visible {
+    color: #fff !important;
+  }
+
+  footer.fixed-bottom a[aria-label="YouTube"]:hover,
+  footer.fixed-bottom a[aria-label="YouTube"]:focus-visible {
+    color: #ff0000 !important;
+  }
 </style> <script>
   (() => {
     document.querySelectorAll('link[rel="shortcut icon"], link[rel="icon"], link[rel="apple-touch-icon"]').forEach((link) => link.remove());
