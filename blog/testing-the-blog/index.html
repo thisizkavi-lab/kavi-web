@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Testing the blog setup | Kavi</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Testing the blog setup" />
+<meta name="author" content="Kabindra Sony" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="This is a placeholder post to test the layout, typography, math rendering, and code blocks while setting up the website." />
+<meta name="twitter:description" property="og:description" content="This is a placeholder post to test the layout, typography, math rendering, and code blocks while setting up the website." />
+<link rel="canonical" href="https://thisizkavi-lab.github.io/kavi-web/blog/testing-the-blog/" />
+<meta property="og:url" content="https://thisizkavi-lab.github.io/kavi-web/blog/testing-the-blog/" />
+<meta property="og:site_name" content="Kavi" />
+<meta property="og:image" content="https://thisizkavi-lab.github.io/kavi-web/assets/img/profile.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-10-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-10-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://thisizkavi-lab.github.io/kavi-web/assets/img/profile.jpg" />
+<meta name="twitter:title" content="Testing the blog setup" />
+<meta name="twitter:site" content="@kvindra__" />
+<meta name="twitter:creator" content="@Kabindra Sony" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Kabindra Sony"},"dateModified":"2026-10-16T00:00:00+00:00","datePublished":"2026-10-16T00:00:00+00:00","description":"This is a placeholder post to test the layout, typography, math rendering, and code blocks while setting up the website.","headline":"Testing the blog setup","image":"https://thisizkavi-lab.github.io/kavi-web/assets/img/profile.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://thisizkavi-lab.github.io/kavi-web/blog/testing-the-blog/"},"url":"https://thisizkavi-lab.github.io/kavi-web/blog/testing-the-blog/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://thisizkavi-lab.github.io/kavi-web/feed.xml" title="Kavi" />
+  <link rel="icon" href="/kavi-web/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/kavi-web/assets/img/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/kavi-web/assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="/kavi-web/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.querySelector('main'), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="/kavi-web/">Kavi</a>
+    <nav><a href="/kavi-web/blog/" aria-current="page">Blog</a><a href="/kavi-web/thoughts/">Thoughts</a></nav>
+  </header>
+
+  <main>
+    <article class="post">
+  <header class="post-header">
+    <h1>Testing the blog setup</h1>
+    <p class="meta">
+      <time datetime="2026-10-16T00:00:00+00:00">16 October 2026</time>
+      · 1 min read
+    </p>
+  </header>
+
+  <p>This is a placeholder post to test the layout, typography, math rendering, and code blocks while setting up the website.</p>
+
+<h2 id="equations">Equations</h2>
+
+<p>Inline math works with double dollar signs, such as the Boltzmann factor \(\exp(-U(x) / k_B T)\), and display equations sit on their own lines:</p>
+
+\[p(x) = \frac{1}{Z} \exp\!\left(-\frac{U(x)}{k_B T}\right)\]
+
+<h2 id="code-blocks">Code blocks</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="k">def</span> <span class="nf">rmsd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="s">"""Root-mean-square deviation between two coordinate arrays."""</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">).</span><span class="nb">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">).</span><span class="n">mean</span><span class="p">())</span>
+</code></pre></div></div>
+
+<p>Once real notes are ready, this test post can be deleted or replaced in <code class="language-plaintext highlighter-rouge">blog/_posts/</code>.</p>
+
+</article><p class="back"><a href="/kavi-web/blog/">← All blog</a></p>
+
+  </main>
+
+  <footer class="site-footer"><a href="mailto:thisizkavi@gmail.com">Email</a><a href="https://github.com/thisizkavi-lab">GitHub</a><a href="https://x.com/kvindra__">X</a><a href="https://www.youtube.com/@kavi-youtube">YouTube</a><a href="/kavi-web/feed.xml">RSS</a>
+  </footer>
+</body>
+</html>
