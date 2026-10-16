@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{%- assign section = site.sections | where: "name", page.section | first -%}
+{%- assign posts = site.categories[page.section] -%}
+<header class="page-header">
+  <h1>{{ section.title }}</h1>
+  <p class="lead">{{ section.blurb }}</p>
+</header>
+
+{%- if posts %}
+{% include post-list.html posts=posts %}
+{%- else %}
+<p class="muted">Nothing here yet.</p>
+{%- endif %}

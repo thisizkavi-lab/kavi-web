@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 220 | plus: 1 -%}
+<article class="post">
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+      · {{ minutes }} min read
+    </p>
+  </header>
+
+  {{ content }}
+</article>
+
+{%- assign section_name = page.categories | first -%}
+<p class="back"><a href="{{ '/' | append: section_name | append: '/' | relative_url }}">← All {{ section_name }}</a></p>

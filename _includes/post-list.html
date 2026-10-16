@@ -1,0 +1,13 @@
+{%- comment -%}
+  Renders a dated list of posts.
+  Usage: {% include post-list.html posts=some_posts show_section=true %}
+{%- endcomment -%}
+<ul class="post-list">
+  {%- for post in include.posts %}
+  <li>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %Y" }}</time>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    {%- if include.show_section %} <span class="tag">{{ post.categories | first }}</span>{% endif %}
+  </li>
+  {%- endfor %}
+</ul>

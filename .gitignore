@@ -1,12 +1,7 @@
-# Jekyll
 _site/
-.sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-.bundle/
+.sass-cache/
+Gemfile.lock
 vendor/
-
-# Local tooling
 .DS_Store
-node_modules/
-.env

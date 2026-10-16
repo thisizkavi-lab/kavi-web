@@ -1,0 +1,272 @@
+/* ------------------------------------------------------------------
+   Kavi — one stylesheet, no frameworks, no web fonts.
+   Charter ships with macOS/iOS; other systems fall back gracefully.
+   ------------------------------------------------------------------ */
+
+:root {
+  --bg: #fcfbf8;
+  --text: #1f1f1f;
+  --muted: #6e6c67;
+  --rule: #e6e3dc;
+  --code-bg: #f3f1ec;
+  --link-line: #b9b5ab;
+
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --measure: 38rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161615;
+    --text: #e7e5e0;
+    --muted: #9b9890;
+    --rule: #2e2d2a;
+    --code-bg: #1f1e1c;
+    --link-line: #5d5a54;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0 auto;
+  max-width: calc(var(--measure) + 3rem);
+  padding: 0 1.5rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--rule); }
+
+/* ---------- Links ---------- */
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--link-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color 120ms ease;
+}
+a:hover { text-decoration-color: currentColor; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: 2px; }
+
+/* ---------- Header & footer ---------- */
+
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2.5rem 0 3.5rem;
+}
+.site-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+.site-header nav { display: flex; gap: 1.4rem; }
+.site-header nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] { color: var(--text); }
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  margin-top: 5rem;
+  padding: 1.75rem 0 3rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.site-footer a { color: var(--muted); text-decoration: none; }
+.site-footer a:hover { color: var(--text); }
+
+/* ---------- Typography ---------- */
+
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  margin: 2.4em 0 0.6em;
+}
+h1 { font-size: 2rem; margin-top: 0; }
+h2 { font-size: 1.35rem; }
+h3 { font-size: 1.12rem; }
+
+p, ul, ol, dl, blockquote, pre, table, figure { margin: 0 0 1.25rem; }
+ul, ol { padding-left: 1.4rem; }
+li + li { margin-top: 0.3rem; }
+
+strong { font-weight: 700; }
+
+.lead { color: var(--muted); margin-top: -0.2rem; }
+.muted { color: var(--muted); }
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--rule);
+  margin: 3rem 0;
+}
+
+blockquote {
+  margin-left: 0;
+  padding-left: 1.2rem;
+  border-left: 2px solid var(--rule);
+  color: var(--muted);
+}
+
+img, video, iframe { max-width: 100%; height: auto; }
+figure { margin-left: 0; margin-right: 0; }
+figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; text-align: center; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; display: block; overflow-x: auto; }
+th, td { text-align: left; padding: 0.45rem 0.8rem 0.45rem 0; border-bottom: 1px solid var(--rule); }
+th { font-weight: 700; }
+
+/* ---------- Code ---------- */
+
+code, pre { font-family: var(--mono); font-size: 0.84em; }
+:not(pre) > code {
+  background: var(--code-bg);
+  padding: 0.12em 0.35em;
+  border-radius: 3px;
+}
+pre {
+  background: var(--code-bg);
+  padding: 1rem 1.15rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+div.highlighter-rouge { margin-bottom: 1.25rem; }
+div.highlighter-rouge pre { margin: 0; }
+
+/* Quiet, monochrome-leaning syntax colours */
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cs, .highlight .cp { color: var(--muted); font-style: italic; }
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kc, .highlight .ow { font-weight: 700; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sd, .highlight .se, .highlight .si { color: #4f7a52; }
+.highlight .m, .highlight .mi, .highlight .mf, .highlight .mh, .highlight .mo { color: #9a5b2f; }
+.highlight .nf, .highlight .fm, .highlight .nc { color: #2f5d8a; }
+@media (prefers-color-scheme: dark) {
+  .highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sd, .highlight .se, .highlight .si { color: #9cc29f; }
+  .highlight .m, .highlight .mi, .highlight .mf, .highlight .mh, .highlight .mo { color: #d9a77e; }
+  .highlight .nf, .highlight .fm, .highlight .nc { color: #93b6d8; }
+}
+
+/* ---------- Math ---------- */
+
+.katex { font-size: 1.05em; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 0.25rem 0; }
+
+/* ---------- Home ---------- */
+
+.intro::after { content: ""; display: table; clear: both; }
+.intro h1 { margin-bottom: 0.25rem; }
+.intro .lead { margin-bottom: 2rem; }
+.intro .lead a { color: inherit; }
+
+.portrait {
+  float: right;
+  width: 180px;
+  height: auto;
+  margin: 0.35rem 0 1.25rem 2rem;
+  border-radius: 4px;
+}
+
+.education {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1.5rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 1rem;
+}
+.education dt { font-weight: 700; }
+.education dd { margin: 0; color: var(--muted); }
+
+.recent { margin-top: 3.5rem; }
+.recent h2 { margin-top: 0; font-size: 1.1rem; }
+
+/* ---------- Lists of posts ---------- */
+
+.page-header { margin-bottom: 2.5rem; }
+
+.post-list { list-style: none; padding: 0; }
+.post-list li {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+  margin: 0;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.post-list li:first-child { border-top: 1px solid var(--rule); }
+.post-list time { color: var(--muted); font-size: 0.92rem; font-variant-numeric: tabular-nums; }
+.post-list a { text-decoration: none; }
+.post-list a:hover { text-decoration: underline; text-decoration-color: var(--link-line); }
+.post-list .tag { color: var(--muted); font-size: 0.85rem; }
+
+/* ---------- Post ---------- */
+
+.post-header { margin-bottom: 2.5rem; }
+.post-header h1 { margin-bottom: 0.4rem; }
+.meta { color: var(--muted); font-size: 0.95rem; margin: 0; }
+
+.post h2 + p, .post h3 + p { margin-top: 0; }
+
+sup { line-height: 0; }
+a.footnote { text-decoration: none; padding: 0 0.1em; }
+.footnotes {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.footnotes a.reversefootnote { text-decoration: none; }
+
+.back { margin-top: 3.5rem; font-size: 0.95rem; }
+.back a { color: var(--muted); text-decoration: none; }
+.back a:hover { color: var(--text); }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 34rem) {
+  body { font-size: 1.0625rem; padding: 0 1.25rem; }
+  .site-header { padding: 1.75rem 0 2.5rem; }
+  h1 { font-size: 1.7rem; }
+  .portrait { width: 112px; margin-left: 1.25rem; }
+  .post-list li { grid-template-columns: 4.6rem 1fr; }
+  .post-list .tag { display: none; }
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+  .site-header nav, .site-footer, .back { display: none; }
+  body { max-width: none; font-size: 11pt; }
+  a { text-decoration: none; }
+}

@@ -1,46 +1,66 @@
-# Kabindra Sony — research portfolio
+# kavi-web
 
-This site is a personal research portfolio and notebook for biophysics, protein dynamics, deep learning, and the process of becoming a scientist.
+Personal site of Kabindra Sony (Kavi). Plain Jekyll, built by GitHub Pages: no theme, no JavaScript, one stylesheet.
 
-It is built with [al-folio](https://github.com/alshedivat/al-folio), a Jekyll-based academic website theme.
-
-## Local development
-
-```bash
-bundle install
-bundle exec jekyll serve --livereload
+```
+index.md                 ← home / about text (edit this)
+_config.yml              ← name, links, sections
+blog/_posts/             ← published blog posts
+thoughts/_posts/         ← published thoughts
+*/_drafts/               ← unpublished drafts (preview only)
+assets/css/style.css     ← the entire design
+assets/img/              ← photo, favicon, post images
+_layouts/                ← page templates (rarely touched)
 ```
 
-Then open http://localhost:4000/kavi-web/.
+## Write a post
 
-## Content map
+1. Create `blog/_posts/2026-10-03-short-title.md` (or `thoughts/_posts/...`):
 
-- `_pages/about.md` — homepage biography and research focus
-- `_pages/research.md` — current scientific direction (kept available, not in the main navigation)
-- `_pages/learning.md` — learning notes, explainers, and tutorials
-- `_pages/reflections.md` — personal reflections
-- `_pages/cv.md` — concise academic snapshot
-- Publications and preprints will be added directly to `_pages/about.md`.
-- `_projects/` — project pages shown in the portfolio
-- `_posts/` — dated research notes
-- `_data/socials.yml` — public contact links
-- `assets/img/profile.jpg` — profile photograph
+   ```markdown
+   ---
+   title: Why structure isn't enough
+   math: true        # optional — only if the post has equations
+   ---
 
-Older Projects, Publications, Teaching, and Notes pages remain in the source as quiet placeholders while there is no finished material to show in the main navigation.
+   Your text in Markdown…
+   ```
 
-## Deployment
+2. `git add . && git commit -m "New post" && git push`. It goes live in about a minute.
 
-The workflow in `.github/workflows/deploy.yml` builds equivalent outputs from the same source:
+- A section shows up in the menu only once it has its first post.
+- The file name sets the date and URL: `/blog/short-title/`.
+- Inline math is `$$x$$`; display math is `$$ … $$` on its own lines.
+- Not ready yet? Put the file in `blog/_drafts/` (no date in the name needed).
 
-- GitHub Pages uses the `/kavi-web/` base path.
-- Vercel uses root-relative links for its `/` domain.
+## Preview locally
 
-On `main`, GitHub Pages is published automatically. The Vercel output is published when the repository has these Actions secrets:
+```sh
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"   # once per terminal
+jekyll serve --drafts --livereload
+```
 
-- `VERCEL_TOKEN`
-- `VERCEL_ORG_ID`
-- `VERCEL_PROJECT_ID`
+Open <http://localhost:4000/kavi-web/>. Drop `--drafts` to see exactly what will be published.
 
-The repository's `vercel.json` intentionally disables Vercel's duplicate Git-triggered build; GitHub Actions owns the build and deploys the finished static output. The existing Vercel project and team must be accessible to the account that creates those values. No secret belongs in the repository.
+## Add lectures later
 
-The original Vite site remains available on the `main` branch while this migration is reviewed.
+1. In `_config.yml`, uncomment the `lectures` section.
+2. Create `lectures/index.html`:
+
+   ```
+   ---
+   layout: section
+   section: lectures
+   title: Lectures
+   ---
+   ```
+
+3. Add posts to `lectures/_posts/`. To embed a recording, paste the YouTube iframe into the post.
+
+## Deploy
+
+Automatic. Every push to `main` runs [.github/workflows/deploy.yml](.github/workflows/deploy.yml), which builds the site and publishes it to the `gh-pages` branch (what GitHub Pages serves). Check progress under the repo's **Actions** tab.
+
+The old al-folio site is preserved in history at commit `8e165fb` (`git checkout 8e165fb`).
+
+If you move to a custom domain, add a `CNAME` file containing the domain and set `baseurl: ""` in `_config.yml`.

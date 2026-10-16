@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/assets/img/favicon.png' | relative_url }}" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {%- if page.math %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.querySelector('main'), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+  {%- endif %}
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav>
+      {%- for section in site.sections -%}
+        {%- if site.categories[section.name] -%}
+          {%- assign section_url = '/' | append: section.name | append: '/' -%}
+          <a href="{{ section_url | relative_url }}"{% if page.url contains section_url %} aria-current="page"{% endif %}>{{ section.title }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    {%- assign s = site.social -%}
+    {%- if s.email %}<a href="mailto:{{ s.email }}">Email</a>{% endif -%}
+    {%- if s.github %}<a href="https://github.com/{{ s.github }}">GitHub</a>{% endif -%}
+    {%- if s.x %}<a href="https://x.com/{{ s.x }}">X</a>{% endif -%}
+    {%- if s.youtube %}<a href="https://www.youtube.com/{{ s.youtube }}">YouTube</a>{% endif -%}
+    {%- if site.posts.size > 0 %}<a href="{{ '/feed.xml' | relative_url }}">RSS</a>{% endif -%}
+  </footer>
+</body>
+</html>

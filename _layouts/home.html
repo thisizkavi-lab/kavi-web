@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<section class="intro">
+  <img class="portrait" src="{{ '/assets/img/profile.jpg' | relative_url }}" width="180" height="185" alt="Kavi in Kyoto">
+  <h1>{{ page.heading }}</h1>
+  <p class="lead">{{ page.tagline | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+  {{ content }}
+</section>
+
+{%- assign recent = site.posts | slice: 0, 5 -%}
+{%- if recent.size > 0 %}
+<section class="recent">
+  <h2>Recent writing</h2>
+  {% include post-list.html posts=recent show_section=true %}
+</section>
+{%- endif %}
