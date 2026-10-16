@@ -8,10 +8,16 @@ layout: default
   {{ content }}
 </section>
 
-{%- assign recent = site.posts | slice: 0, 5 -%}
-{%- if recent.size > 0 %}
+{%- assign recent = site.posts | slice: 0, 5 %}
 <section class="recent">
   <h2>Recent writing</h2>
+  {%- if recent.size > 0 %}
   {% include post-list.html posts=recent show_section=true %}
+  {%- else %}
+  <p class="muted">Nothing published yet. New posts in
+    {% for section in site.sections -%}
+      {%- if forloop.last and forloop.length > 1 %} and {% elsif forloop.index > 1 %}, {% endif -%}
+      <a href="{{ '/' | append: section.name | append: '/' | relative_url }}">{{ section.title }}</a>
+    {%- endfor %} will show up here.</p>
+  {%- endif %}
 </section>
-{%- endif %}

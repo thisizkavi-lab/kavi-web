@@ -29,7 +29,7 @@ image: /assets/img/profile.jpg
 #   blog/_posts/2026-10-03-my-post.md      -> /blog/my-post/
 #   thoughts/_posts/2026-10-03-my-post.md  -> /thoughts/my-post/
 # To add lectures later, uncomment it here and create lectures/_posts/.
-# A section only appears in the menu once it has at least one post.
+# Every section listed here appears in the menu, even before its first post.
 # ---------------------------------------------------------------
 sections:
   - name: blog

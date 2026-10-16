@@ -28,7 +28,7 @@ _layouts/                ← page templates (rarely touched)
 
 2. `git add . && git commit -m "New post" && git push`. It goes live in about a minute.
 
-- A section shows up in the menu only once it has its first post.
+- Blog and Thoughts are always in the menu; empty sections show a short placeholder.
 - The file name sets the date and URL: `/blog/short-title/`.
 - Inline math is `$$x$$`; display math is `$$ … $$` on its own lines.
 - Not ready yet? Put the file in `blog/_drafts/` (no date in the name needed).

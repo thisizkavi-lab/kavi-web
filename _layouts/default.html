@@ -22,10 +22,8 @@
     <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <nav>
       {%- for section in site.sections -%}
-        {%- if site.categories[section.name] -%}
-          {%- assign section_url = '/' | append: section.name | append: '/' -%}
-          <a href="{{ section_url | relative_url }}"{% if page.url contains section_url %} aria-current="page"{% endif %}>{{ section.title }}</a>
-        {%- endif -%}
+        {%- assign section_url = '/' | append: section.name | append: '/' -%}
+        <a href="{{ section_url | relative_url }}"{% if page.url contains section_url %} aria-current="page"{% endif %}>{{ section.title }}</a>
       {%- endfor -%}
     </nav>
   </header>
@@ -40,7 +38,7 @@
     {%- if s.github %}<a href="https://github.com/{{ s.github }}">GitHub</a>{% endif -%}
     {%- if s.x %}<a href="https://x.com/{{ s.x }}">X</a>{% endif -%}
     {%- if s.youtube %}<a href="https://www.youtube.com/{{ s.youtube }}">YouTube</a>{% endif -%}
-    {%- if site.posts.size > 0 %}<a href="{{ '/feed.xml' | relative_url }}">RSS</a>{% endif -%}
+    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
   </footer>
 </body>
 </html>
