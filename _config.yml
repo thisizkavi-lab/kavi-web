@@ -34,13 +34,13 @@ image: /assets/img/profile.jpg
 sections:
   - name: blog
     title: Blog
-    blurb: Things I learn, work through, and explain.
+    blurb: Along the way.
   - name: thoughts
     title: Thoughts
-    blurb: On science, ambition, and becoming a scientist.
-  # - name: lectures
-  #   title: Lectures
-  #   blurb: Recorded talks and lectures.
+    blurb: Passing thoughts.
+  - name: talks
+    title: Talks
+    blurb: Out loud.
 
 permalink: /:categories/:title/
 
