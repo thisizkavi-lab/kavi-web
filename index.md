@@ -10,8 +10,3 @@ Hello, this is Kavi. I'm currently a graduate student at [Kyoto University](http
 Learning, exploring, and working on things that interest me. This is where I share some of that, along with whatever else comes up along the way.
 
 If something here interests you, feel free to [reach out](mailto:{{ site.social.email }}).
-
-<dl class="education">
-  <dt>Kyoto University</dt><dd>Graduate · Biophysics</dd>
-  <dt><a href="https://tu.edu.np/">Tribhuvan University</a></dt><dd>Undergraduate · Biology</dd>
-</dl>
