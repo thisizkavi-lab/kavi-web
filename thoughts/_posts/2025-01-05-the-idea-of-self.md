@@ -1,6 +1,6 @@
 ---
 title: "The Idea of Self"
-date: 2026-11-23
+date: 2025-01-05
 ---
 
 I dislike dividing the self into parts, yet it seems to move as three coupled things: body, mind, and spirit. Neglect one and the feedback loop eventually reaches the rest. Biology is simple and hard to argue with once you strip away the optimization noise. Food, movement, and rest are enough to keep the vessel working so the mind stays clear. The mind holds working memory, identity, and the craft baked into you, ready when you need it, though it also manufactures static and loops even when everything else is in order. Telling useful thought apart from background noise is half the work.
