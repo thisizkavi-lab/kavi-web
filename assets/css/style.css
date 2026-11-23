@@ -252,12 +252,67 @@ a.footnote { text-decoration: none; padding: 0 0.1em; }
 .back a { color: var(--muted); text-decoration: none; }
 .back a:hover { color: var(--text); }
 
+/* ---------- Thoughts (old-book reading mode) ---------- */
+
+html.section-thoughts {
+  color-scheme: light;
+  --bg: #d7cbb8;
+  --text: #1b1815;
+  --muted: #5b5245;
+  --rule: #bfb19c;
+  --code-bg: #cbc0ad;
+  --link-line: #8c7f6c;
+  --serif: "Newsreader", "EB Garamond", Georgia, "Times New Roman", serif;
+  --measure: 36rem;
+}
+
+html.section-thoughts body {
+  font-size: 1.2rem;
+  line-height: 1.72;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variant-ligatures: common-ligatures;
+  letter-spacing: -0.004em;
+  -webkit-font-smoothing: auto;
+}
+
+html.section-thoughts .site-header { padding: 2.25rem 0 3.25rem; }
+html.section-thoughts .site-name { font-weight: 600; }
+html.section-thoughts .site-header nav,
+html.section-thoughts .site-footer { font-weight: 400; }
+
+html.section-thoughts .post-header { margin-bottom: 2.2rem; }
+html.section-thoughts .post-header h1 {
+  font-size: 2.15rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+html.section-thoughts .meta {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.98rem;
+}
+
+html.section-thoughts .post > p {
+  margin: 0 0 0.65rem;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+}
+html.section-thoughts .post > p + p { text-indent: 1.75em; }
+
+html.section-thoughts .post h2,
+html.section-thoughts .post h3 { font-weight: 600; }
+
 /* ---------- Small screens ---------- */
 
 @media (max-width: 34rem) {
   body { font-size: 1.0625rem; padding: 0 1.25rem; }
+  html.section-thoughts body { font-size: 1.125rem; line-height: 1.68; }
   .site-header { padding: 1.75rem 0 2.5rem; }
   h1 { font-size: 1.7rem; }
+  html.section-thoughts .post-header h1 { font-size: 1.8rem; }
   .portrait { width: 112px; margin-left: 1.25rem; }
   .post-list li { grid-template-columns: 4.6rem 1fr; }
   .post-list .tag { display: none; }
